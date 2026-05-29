@@ -1,51 +1,73 @@
-import customtkinter as ctk
+import random
+import time
 
-ctk.set_apperance_mode("Dark")
-ctk.set_default_color_theme("pink")
+# Essas duas importações server uma para sortear números e tempo
 
-janela = ctk.CTk()
-                         
-print("JOGO DE RPG")
+#Para fazer o texto aparecer sendo digitado como uma máquina antiga
 
-nome_do_jogador = (input("Escolha um nome de usuário: "))
+def digitar(texto, velocidade = 0.1): #está definindo tempo dentro do texto
+    for letra in texto:
+        print(letra, end='', flush=True)
+        time.sleep(velocidade)
+    print()
 
-print(f"Ótimo {nome_do_jogador}, vamos começar o jogo.")
+digitar('JOGO DE RPG')
+time.sleep(1)
 
+digitar("Escolha um nome de usuário: ")
+
+
+nome_do_jogador = input
+
+digitar(f"Ótimo {nome_do_jogador}, vamos começar o jogo.")
 
 print("1 - Humano")
 print("2 - Elfo")
 print("3 - Mago")
 print("4 - Fada")
 print("5 - Cavalheiro")
-classe = (input("Escolha a sua classe: "))
+digitar('Escolha a sua classe:')
+time.sleep(1)
+classe = (int(input))
 
 if classe == 1 :
     vida = 75
     força = 45
     equipamento = "Faca"
     experiência =  10
+    nomedaclasse = 'Humano'
 
 elif classe == 2 :
     vida = 60
     força = 30
     equipamento = "Graveto"
     experiência =  40
+    nomedaclasse = 'Elfo'
 
 elif classe == 3 :
     vida = 70
     força = 20
     equipamento = "Varinha"
     experiência =  80
+    nomedaclasse = 'Mago'
 
 elif classe == 4 :
     vida = 20
     força = 20
     equipamento = "Sal da felicidade"
     experiência =  8
+    nomedaclasse = 'Fada'
 
 else : 
     vida = 80
     força = 90
     equipamento = "Espada"
     experiência =  30
-    
+    nomedaclasse = 'Cavalheiro'
+
+print(f"Status da classe: {nomedaclasse}")
+print(f'''           Vida: {vida}hp.
+           Força: {força}.
+           Equipamento: {equipamento}.
+           Experiência: {experiência}xp.
+      ''')
